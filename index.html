@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+
+    <title>Contact Page | devChallenges.io</title>
+
+    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
+    <style>
+      .logo-row {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-left: 40px;
+        box-sizing: border-box;
+        gap: 16px;
+      }
+      .logo {
+        width: 56px;
+        height: 56px;
+        display: block;
+      }
+      .logo-text {
+        font-family: 'Inter', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 2.1rem;
+        color: #fff;
+        letter-spacing: 0.04em;
+        margin-left: 8px;
+        margin-top: 4px;
+        text-shadow: 0 2px 8px rgba(17,23,41,0.10);
+        user-select: none;
+      }
+      .main-headings {
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto 32px auto;
+        text-align: left;
+        padding-left: 40px;
+        box-sizing: border-box;
+      }
+      .main-title {
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.1;
+        margin-bottom: 8px;
+        margin-top: 0;
+        letter-spacing: -0.5px;
+        text-align: left;
+      }
+      .main-subtitle {
+        color: #CDD5E0;
+        font-size: 1.25rem;
+        margin-bottom: 32px;
+        line-height: 1.5;
+        text-align: left;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(120deg, #4036A9 0%, #111729 100%);
+        background-color: #4036A9;
+        background-image: url('resources/background.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        font-family: 'Inter', Arial, sans-serif;
+      }
+
+      .author-info {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 16px;
+        color: rgb(55, 65, 81);
+      }
+
+      .author-info a {
+        text-decoration: none;
+      }
+      /* --- Responsive Contact Page Styles --- */
+      .main-bg {
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: 1000px;
+      }
+      .logo-row {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        padding-left: 40px;
+        box-sizing: border-box;
+      }
+      .logo {
+        width: 56px;
+        height: 56px;
+      }
+      .contact-card {
+        background: rgba(255,255,255,0.20);
+        border-radius: 24px;
+        box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.15);
+        padding: 56px 56px 40px 56px;
+        max-width: 650px;
+        width: 100%;
+        margin: 0 auto;
+        backdrop-filter: blur(8px);
+      }
+      .contact-card h1 {
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 16px;
+        text-align: center;
+        line-height: 1.1;
+      }
+      .contact-card p {
+        color: #CDD5E0;
+        font-size: 1.25rem;
+        margin-bottom: 40px;
+        text-align: center;
+        line-height: 1.5;
+      }
+      form {
+        width: 100%;
+      }
+      .form-row {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 32px;
+      }
+      .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+      label {
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+      input, select, textarea {
+        padding: 18px 20px;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.15rem;
+        background: #fff;
+        color: #111729;
+        margin-bottom: 0;
+        outline: none;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        resize: none;
+      }
+      input:focus, select:focus, textarea:focus {
+        box-shadow: 0 0 0 2px #a82ff7;
+      }
+      textarea {
+        min-height: 120px;
+        max-width: 100%;
+      }
+      button[type="submit"] {
+        width: 100%;
+        background: #4036A9;
+        color: #fff;
+        letter-spacing: 0.02em;
+        font-weight: 700;
+        font-size: 1.25rem;
+        padding: 22px 0;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 24px;
+        transition: background 0.2s, color 0.2s;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      }
+      button[type="submit"]:hover {
+        background: #B4436D;
+        color: #fff;
+      }
+      @media (max-width: 900px) {
+        .contact-card {
+          padding: 32px 8px 20px 8px;
+          max-width: 98vw;
+        }
+        .logo-row {
+          padding-left: 12px;
+        }
+        .main-headings {
+          padding-left: 12px;
+        }
+      }
+      @media (max-width: 700px) {
+        .contact-card {
+          padding: 24px 4vw 16px 4vw;
+        }
+        .form-row {
+          flex-direction: column;
+          gap: 0;
+        }
+        .logo-row {
+          margin-bottom: 24px;
+        }
+        .main-title {
+          font-size: 2rem;
+        }
+        .main-subtitle {
+          font-size: 1rem;
+        }
+        button[type="submit"] {
+          font-size: 1rem;
+          padding: 16px 0;
+        }
+      }
+      .main-bg {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 0;
+        color: #fff;
+        font-size: 21px;
+        text-align: center;
+      }
+
+      .logo-row {
+        width: 100%;
+        max-width: 900px;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 32px;
+      }
+      .logo {
+        width: 100px;
+        height: 50px;
+      }
+
+      .contact-card {
+        background: rgba(255,255,255,0.15);
+        border-radius: 24px;
+        box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+        padding: 48px 40px 32px 40px;
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        backdrop-filter: blur(8px);
+      }
+      .contact-card h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+      .contact-card p {
+        color: #e0e7ff;
+        font-size: 1.15rem;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+      form {
+        width: 100%;
+      }
+      .form-row {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+      .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+      input, select, textarea {
+        padding: 16px 14px;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        background: #fff;
+        color: #111827;
+        margin-bottom: 0;
+        outline: none;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        resize: none;
+      }
+      input:focus, select:focus, textarea:focus {
+        box-shadow: 0 0 0 2px #a82ff7;
+      }
+      textarea {
+        min-height: 100px;
+        max-width: 100%;
+      }
+      button[type="submit"] {
+        width: 100%;
+        background: #fff;
+        color: #6d3cff;
+        font-weight: 700;
+        font-size: 1.15rem;
+        padding: 18px 0;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 16px;
+        transition: background 0.2s, color 0.2s;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      }
+      button[type="submit"]:hover {
+        background: #a82ff7;
+        color: #fff;
+      }
+      @media (max-width: 700px) {
+        .contact-card {
+          padding: 32px 12px 24px 12px;
+        }
+        .form-row {
+          flex-direction: column;
+          gap: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <main class="main-bg">
+      <div class="logo-row">
+        <img src="resources/Logo.svg" alt="Logo" class="logo" />
+        <span class="logo-text"></span>
+      </div>
+      <div class="main-headings">
+        <h1 class="main-title">Interested in our<br>business pricing?</h1>
+        <p class="main-subtitle">Fill out the form to view details and we'll<br>contact you as soon as possible.</p>
+      </div>
+      <section class="contact-card">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Ethan Johnson" />
+            </div>
+            <div class="form-group">
+              <label for="email">Company Email</label>
+              <input type="email" id="email" name="email" placeholder="ethan@johnson.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company-size">Company Size</label>
+              <select id="company-size" name="company-size">
+                <option selected>50-100 employees</option>
+                <option>10-50 employees</option>
+                <option>100-500 employees</option>
+                <option>500+ employees</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Building Landing pages" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="50-100 employees"></textarea>
+          </div>
+          <button type="submit">Contact Sales</button>
+        </form>
+      </section>
+    </main>
+
+    <div class="author-info">
+      Coded by <a href="#">Ayokanmi Adejola</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank">devChallenges.io</a>.
+    </div>
+      
+  </body>
+</html>
