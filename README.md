@@ -1,6 +1,6 @@
 
 
-# Contact Page | devChallenges
+# Contact Page | devChallenges.io
 
 <div align="center">
   <img src="./thumbnail.jpg" alt="Contact Page Screenshot" width="600" />
@@ -13,6 +13,10 @@
 ## 📋 Overview
 
 This project is a professional, pixel-perfect, and fully responsive contact page built for the devChallenges.io Contact Page challenge. The page is designed to closely match the provided design, with a focus on:
+
+| Desktop | Tablet | Mobile |
+| ------- | ------ | ------ |
+| ![Desktop](./design/Desktop_1350px.jpg) | ![Tablet](./design/Tablet_1024px.jpg) | ![Mobile](./design/Mobile_412px.jpg) |
 
 - Modern, accessible HTML5 and CSS3 (no frameworks)
 - Responsive layout for desktop, tablet, and mobile
@@ -57,23 +61,9 @@ This project is a professional, pixel-perfect, and fully responsive contact page
 - Using box-shadow and backdrop-filter for modern UI
 - Managing color palettes and accessibility
 
-## 📸 Screenshots
-
-<div align="center">
-  <img src="./design/Desktop_1350px.jpg" alt="Desktop Design" width="400" />
-  <img src="./design/Tablet_1024px.jpg" alt="Tablet Design" width="300" />
-  <img src="./design/Mobile_412px.jpg" alt="Mobile Design" width="200" />
-</div>
 
 ## 📚 Useful Resources
 
 - [MDN Web Docs](https://developer.mozilla.org/) — HTML and CSS reference
 - [CSS Tricks Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) — Layout help
 - [devChallenges.io Community](https://devchallenges.io/) — Challenge details and support
-
-
----
-
-## 👤 Author
-Coded by **Ayokanmi Adejola**  
-Challenge by [devChallenges.io](https://devchallenges.io/)
